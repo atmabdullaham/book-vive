@@ -1,6 +1,7 @@
 import { IoIosArrowDown } from "react-icons/io";
 import { Outlet } from "react-router-dom";
 import ReadWishlist from "../components/ReadWishlist";
+
 const ListedBooks = () => {
   return (
     <div>
@@ -10,7 +11,7 @@ const ListedBooks = () => {
       <div className="flex items-center justify-center py-4">
         <div className="dropdown dropdown-start">
           <div tabIndex={0} role="button" className="btn m-1">
-            Click
+            Sort by
             <IoIosArrowDown />
           </div>
           <ul
@@ -18,13 +19,13 @@ const ListedBooks = () => {
             className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
           >
             <li>
-              <a>Rating</a>
+              <button>Rating</button>
             </li>
             <li>
-              <a>Number of Pages</a>
+              <button>Number of Pages</button>
             </li>
             <li>
-              <a>Publish Year</a>
+              <button>Publish Year</button>
             </li>
           </ul>
         </div>

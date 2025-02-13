@@ -16,6 +16,7 @@ const ReadWishlistContainer = () => {
     setBooks(allBooks);
   }, [lastPart]);
   // console.log(books);
+
   return (
     <div className="grid grid-cols-1 gap-3 rounded-xl">
       {books.map((book) => (

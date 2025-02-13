@@ -1,15 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const ReadWishlist = () => {
   return (
     <div>
       <div role="tablist" className="tabs tabs-lift">
-        <Link to="/listed-books/read-books" role="tab" className="tab">
+        <NavLink
+          to="/listed-books/read-books"
+          role="tab"
+          className={({ isActive }) => `tab${isActive ? "tab-active" : ""}`}
+        >
           Read Books
-        </Link>
-        <Link to="/listed-books/wishlist-books" role="tab" className="tab">
+        </NavLink>
+        <NavLink
+          to="/listed-books/wishlist-books"
+          role="tab"
+          className={({ isActive }) => `tab${isActive ? "tab-active" : ""}`}
+        >
           Wishlist Books
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import MainLayouts from "../layouts/MainLayouts";
 import Home from "../pages/Home";
 import ListedBooks from "../pages/ListedBooks";
@@ -22,6 +22,7 @@ const routes = createBrowserRouter([
         element: <BookDetails></BookDetails>,
         loader: () => fetch("../../public/booksData.json"),
       },
+
       {
         path: "/listed-books",
         element: <ListedBooks></ListedBooks>,
@@ -29,6 +30,10 @@ const routes = createBrowserRouter([
           {
             path: "/listed-books/:typeBooks",
             element: <ReadWishlistContainer></ReadWishlistContainer>,
+          },
+          {
+            path: "/listed-books",
+            element: <Navigate to="/listed-books/read-books" replace />,
           },
         ],
       },
